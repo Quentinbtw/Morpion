@@ -1,1 +1,1 @@
-## Morpion en console
+## Morpion avec Tkinter

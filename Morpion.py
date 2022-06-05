@@ -93,7 +93,7 @@ def begin() :
             widget.destroy()
 
     btn11 = Button(window, text =" ", command = lambda : jouer(grille, 0, 0, boutons), height = 15, width = 20)
-    btn11.grid(row = 0, column = 0)
+    btn11.grid(row = 0, column = 0, padx = 200, sticky = "E")
 
     btn12 = Button(window, text =" ", command = lambda : jouer(grille, 0, 1, boutons), height = 15, width = 20)
     btn12.grid(row = 0, column = 1)
@@ -102,7 +102,7 @@ def begin() :
     btn13.grid(row = 0, column = 2)
 
     btn21 = Button(window, text =" ", command = lambda : jouer(grille, 1, 0, boutons), height = 15, width = 20)
-    btn21.grid(row = 1, column = 0)
+    btn21.grid(row = 1, column = 0, padx = 0)
 
     btn22 = Button(window, text =" ", command = lambda : jouer(grille, 1, 1, boutons), height = 15, width = 20)
     btn22.grid(row = 1, column = 1)

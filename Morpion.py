@@ -1,3 +1,4 @@
+from email.quoprimime import body_decode
 from tkinter import *  
 
 def round(grille, x, y, joueur):
@@ -76,13 +77,14 @@ def jouer(grille, x, y, boutons, game, score0, score1) :
         for widget in window.winfo_children():
             widget.destroy()
 
-        text_gagnant = Label(window, text = "Bizzare")
+        text_gagnant = Label(window, text = "Bizzare", bg="#62bce3", fg='white', font=("Arial", 40))
         text_gagnant.pack()
 
-        text_score = Label(window, text = "Louis -  "+str(score0)+" : "+str(score1)+"  - Quentin" )
+        text_score = Label(window, text = "Louis -  "+str(score0)+" : "+str(score1)+"  - Quentin", bg="#cf4e75", fg='white', font=("Arial", 40) )
         text_score.pack()
 
-        btn = Button(window, text ="Recommencer", command = lambda : begin(game, score0, score1))
+        btn = Button(window, text ="Recommencer", command = lambda : begin(game, score0, score1), bg="#62bce3", borderwidth=0, 
+        fg='white', font=("Arial", 40), activebackground='#62bce3')
         btn.pack()
 
     else:
@@ -98,13 +100,14 @@ def jouer(grille, x, y, boutons, game, score0, score1) :
         for widget in window.winfo_children():
             widget.destroy()
 
-        text_gagnant = Label(window, text = "Le gagnant c le : "+str(gagnant))
+        text_gagnant = Label(window, text = "Le gagnant c le : "+str(gagnant), bg="#62bce3", fg='white', font=("Arial", 40))
         text_gagnant.pack()
 
-        text_score = Label(window, text = "Louis -  "+str(score0)+" : "+str(score1)+"  - Quentin" )
+        text_score = Label(window, text = "Louis -  "+str(score0)+" : "+str(score1)+"  - Quentin", bg="#62bce3", fg='white', font=("Arial", 40))
         text_score.pack()
 
-        btn = Button(window, text ="Recommencer", command = lambda : begin(game, score0, score1))
+        btn = Button(window, text ="Recommencer", command = lambda : begin(game, score0, score1), bg="#62bce3", borderwidth=0, 
+        fg='white', font=("Arial", 40), activebackground='#62bce3')
         btn.pack()
 
 def begin(game, score0, score1) :
@@ -121,32 +124,32 @@ def begin(game, score0, score1) :
     
     photo = PhotoImage(file = "./vide.PNG")
 
-    btn11 = Button(window, image = photo, command = lambda : jouer(grille, 0, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn11 = Button(window, image = photo, command = lambda : jouer(grille, 0, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn11.image = photo
     btn11.place(x = W_MARGIN, y = H_MARGIN)
 
-    btn12 = Button(window, image = photo, command = lambda : jouer(grille, 0, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn12 = Button(window, image = photo, command = lambda : jouer(grille, 0, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn12.place(x = W_MARGIN + WIDTH, y = H_MARGIN)
 
-    btn13 = Button(window, image = photo, command = lambda : jouer(grille, 0, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn13 = Button(window, image = photo, command = lambda : jouer(grille, 0, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn13.place(x = W_MARGIN + WIDTH*2, y = H_MARGIN)
 
-    btn21 = Button(window, image = photo, command = lambda : jouer(grille, 1, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn21 = Button(window, image = photo, command = lambda : jouer(grille, 1, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn21.place(x = W_MARGIN, y = H_MARGIN + HEIGHT)
 
-    btn22 = Button(window, image = photo, command = lambda : jouer(grille, 1, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn22 = Button(window, image = photo, command = lambda : jouer(grille, 1, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn22.place(x = W_MARGIN + WIDTH, y = H_MARGIN + HEIGHT)
 
-    btn23 = Button(window, image = photo, command = lambda : jouer(grille, 1, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn23 = Button(window, image = photo, command = lambda : jouer(grille, 1, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn23.place(x = W_MARGIN + WIDTH*2, y = H_MARGIN +HEIGHT)
 
-    btn31 = Button(window, image = photo, command = lambda : jouer(grille, 2, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn31 = Button(window, image = photo, command = lambda : jouer(grille, 2, 0, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn31.place(x = W_MARGIN, y = H_MARGIN + HEIGHT*2)
 
-    btn32 = Button(window, image = photo, command = lambda : jouer(grille, 2, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn32 = Button(window, image = photo, command = lambda : jouer(grille, 2, 1, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn32.place(x = W_MARGIN + WIDTH, y = H_MARGIN + HEIGHT*2)
 
-    btn33 = Button(window, image = photo, command = lambda : jouer(grille, 2, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH)
+    btn33 = Button(window, image = photo, command = lambda : jouer(grille, 2, 2, boutons, game, score0, score1), height = HEIGHT, width = WIDTH, borderwidth=0)
     btn33.place(x = W_MARGIN + WIDTH*2, y = H_MARGIN + HEIGHT*2)
 
     boutons = [btn11, btn12, btn13, btn21, btn22, btn23, btn31, btn32, btn33]
@@ -155,6 +158,7 @@ def begin(game, score0, score1) :
 
 window = Tk()
 window.attributes('-fullscreen', True) 
+window.configure(background='#62bce3')
 
 game = 0
 score0 = 0
